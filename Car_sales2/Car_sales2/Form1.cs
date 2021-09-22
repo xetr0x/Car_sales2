@@ -12,10 +12,11 @@ namespace Car_sales2
 {
     public partial class Form1 : Form
     {
+        List<Car> Cars;
         public Form1()
         {
             InitializeComponent();
-            List<Car> Cars = new List<Car>();
+            Cars = new List<Car>();
 
             Cars.Add(new Car() { Id = 1, Make = "Volvo", Model = "V70", Color = "White", Km = 1292, Price = 3465, Year = 1998 });
             Cars.Add(new Car() { Id = 31, Make = "Skoda", Model = "Fabia", Color = "Red", Km = 1292, Price = 76556, Year = 2001 });
@@ -39,7 +40,19 @@ namespace Car_sales2
             Cars.Add(new Car() { Id = 991, Make = "Volvo", Model = "V70", Color = "Red", Km = 3475, Price = 14512, Year = 1998 });
             Cars.Add(new Car() { Id = 801, Make = "Audi", Model = "A7", Color = "White", Km = 492, Price = 187500, Year = 2002 });
             Cars.Add(new Car() { Id = 6031, Make = "Audi", Model = "A6", Color = "Blue", Km = 553, Price = 55400, Year = 2011 });
+
+
+            foreach (Car cars in Cars.OrderBy(x => x.Make))
+            {
+                listBox1.Items.Add(cars);
+            };
+
+
         }
+
+
+
+
 
 
         class Car
@@ -51,6 +64,30 @@ namespace Car_sales2
             public int Km;
             public int Price;
             public int Year;
+
+            public override string ToString()
+            {
+                return $"{Make} {Model}";
+            }
+        }
+
+ 
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            ListBox myListofCars = sender as ListBox;
+
+            Car mySelectedCar = myListofCars.SelectedItem as Car;
+
+            listBox2.Items.Add($"Id: {mySelectedCar.Id}");
+            listBox2.Items.Add($"Model: {mySelectedCar.Make} {mySelectedCar.Model}");
+            listBox2.Items.Add($"Driving distance: {mySelectedCar.Km} Km");
+            listBox2.Items.Add($"Color: {mySelectedCar.Color}");
+            listBox2.Items.Add($"Price: {mySelectedCar.Price} SEK");
+            listBox2.Items.Add($"Year: {mySelectedCar.Year}");
+
+
         }
     }
 }
