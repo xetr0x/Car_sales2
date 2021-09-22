@@ -41,19 +41,23 @@ namespace Car_sales2
             Cars.Add(new Car() { Id = 801, Make = "Audi", Model = "A7", Color = "White", Km = 492, Price = 187500, Year = 2002 });
             Cars.Add(new Car() { Id = 6031, Make = "Audi", Model = "A6", Color = "Blue", Km = 553, Price = 55400, Year = 2011 });
 
+            int i = Cars.Select(x => x.Color).Distinct().Count();
+            var CarColors = Cars.Select(x => x.Color).Distinct();
+            foreach (var item in CarColors)
+            {
+                listBox3.Items.Add(item);
+            }
 
-            foreach (Car cars in Cars.OrderBy(x => x.Make))
+                foreach (Car cars in Cars.OrderBy(x => x.Make))
             {
                 listBox1.Items.Add(cars);
             };
 
 
+            int number = int.Parse(textBox3.Text);
+            listBox5.Items.Add(Cars[number].Make);
+
         }
-
-
-
-
-
 
         class Car
         {
@@ -71,7 +75,7 @@ namespace Car_sales2
             }
         }
 
- 
+
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -89,5 +93,21 @@ namespace Car_sales2
 
 
         }
+
+            
+    private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            listBox4.Items.Clear();
+            string ChoiceColor = (sender as ListBox).SelectedItem as string;
+
+            var i = Cars.FindAll(x => x.Color == ChoiceColor);
+            foreach (var item in i)
+            {
+                listBox4.Items.Add($"{item}");
+            }
+        }
+
+
     }
 }
