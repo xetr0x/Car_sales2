@@ -138,6 +138,18 @@ namespace Car_sales2
 
 
         }
+
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            Cars.Add(new Car() { Make = textBox4.Text, Model = textBox5.Text, Color = textBox6.Text, Km = int.Parse(textBox7.Text),
+                Price = int.Parse(textBox8.Text), Year = int.Parse(textBox9.Text)});
+            listBox1.Items.Clear();
+            List();
+
+        }
     }
 
 
