@@ -252,9 +252,9 @@ namespace Car_sales2
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label7.Location = new System.Drawing.Point(991, 158);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 17);
+            this.label7.Size = new System.Drawing.Size(42, 17);
             this.label7.TabIndex = 23;
-            this.label7.Text = "Price";
+            this.label7.Text = "Make";
             // 
             // label8
             // 
@@ -262,9 +262,9 @@ namespace Car_sales2
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label8.Location = new System.Drawing.Point(991, 203);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 17);
+            this.label8.Size = new System.Drawing.Size(46, 17);
             this.label8.TabIndex = 24;
-            this.label8.Text = "Price";
+            this.label8.Text = "Model";
             // 
             // label9
             // 
@@ -272,9 +272,9 @@ namespace Car_sales2
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label9.Location = new System.Drawing.Point(991, 237);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 17);
+            this.label9.Size = new System.Drawing.Size(41, 17);
             this.label9.TabIndex = 25;
-            this.label9.Text = "Price";
+            this.label9.Text = "Color";
             // 
             // label10
             // 
@@ -282,9 +282,9 @@ namespace Car_sales2
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label10.Location = new System.Drawing.Point(991, 273);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 17);
+            this.label10.Size = new System.Drawing.Size(28, 17);
             this.label10.TabIndex = 26;
-            this.label10.Text = "Price";
+            this.label10.Text = "Km";
             // 
             // label11
             // 
@@ -309,9 +309,9 @@ namespace Car_sales2
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label12.Location = new System.Drawing.Point(991, 359);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 17);
+            this.label12.Size = new System.Drawing.Size(38, 17);
             this.label12.TabIndex = 29;
-            this.label12.Text = "Price";
+            this.label12.Text = "Year";
             // 
             // Form1
             // 
