@@ -54,8 +54,7 @@ namespace Car_sales2
             };
 
 
-            int number = int.Parse(textBox3.Text);
-            listBox5.Items.Add(Cars[number].Make);
+
 
         }
 
@@ -109,5 +108,25 @@ namespace Car_sales2
         }
 
 
+
+        
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int SelectedID = int.Parse(textBox1.Text);
+            var SelectedCar = Cars.Find(x => x.Id == SelectedID);
+            textBox2.Text = SelectedCar.Price.ToString();
+            textBox3.Text = SelectedCar.Km.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cars.Find(x => x.Id == int.Parse(textBox1.Text)).Price = int.Parse(textBox2.Text);
+            Cars.Find(x => x.Id == int.Parse(textBox1.Text)).Km = int.Parse(textBox3.Text);
+        }
     }
+
+
+
 }
