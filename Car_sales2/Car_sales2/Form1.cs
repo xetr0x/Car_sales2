@@ -113,7 +113,13 @@ namespace Car_sales2
             };
         }
         
-
+         public int Index()
+        {
+            var index = Cars.Select(x => x.Id).Max();
+            int index1 = index + 1;
+            return index1;
+            
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -144,7 +150,7 @@ namespace Car_sales2
         private void button4_Click(object sender, EventArgs e)
         {
 
-            Cars.Add(new Car() { Make = textBox4.Text, Model = textBox5.Text, Color = textBox6.Text, Km = int.Parse(textBox7.Text),
+            Cars.Add(new Car() { Id = Index(),Make = textBox4.Text, Model = textBox5.Text, Color = textBox6.Text, Km = int.Parse(textBox7.Text),
                 Price = int.Parse(textBox8.Text), Year = int.Parse(textBox9.Text)});
             listBox1.Items.Clear();
             List();
