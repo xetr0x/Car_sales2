@@ -48,10 +48,7 @@ namespace Car_sales2
                 listBox3.Items.Add(item);
             }
 
-                foreach (Car cars in Cars.OrderBy(x => x.Make))
-            {
-                listBox1.Items.Add(cars);
-            };
+            List();
 
 
 
@@ -108,7 +105,13 @@ namespace Car_sales2
         }
 
 
-
+        public void List()
+        {
+            foreach (Car cars in Cars.OrderBy(x => x.Make))
+            {
+                listBox1.Items.Add(cars);
+            };
+        }
         
 
 
@@ -124,6 +127,16 @@ namespace Car_sales2
         {
             Cars.Find(x => x.Id == int.Parse(textBox1.Text)).Price = int.Parse(textBox2.Text);
             Cars.Find(x => x.Id == int.Parse(textBox1.Text)).Km = int.Parse(textBox3.Text);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int SelectedID = Cars.FindIndex(x => x.Id == int.Parse(textBox1.Text));
+            Cars.RemoveAt(SelectedID);
+            listBox1.Items.Clear();
+            List();
+
+
         }
     }
 
